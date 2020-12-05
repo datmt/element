@@ -201,6 +201,10 @@
         let result = [];
         let i = 0;
         let threshold = this.currentValue;
+        if (threshold > 100) {
+            console.warn("Possible out of memory error. Your current value: ", threshold);
+        }
+        
         if (this.allowHalf && this.currentValue !== Math.floor(this.currentValue)) {
           threshold--;
         }
